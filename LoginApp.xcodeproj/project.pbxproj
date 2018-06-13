@@ -15,6 +15,7 @@
 		44369C7320D08E2C0067B247 /* LoginAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44369C7220D08E2C0067B247 /* LoginAppTests.swift */; };
 		44369C7E20D08E2C0067B247 /* LoginAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44369C7D20D08E2C0067B247 /* LoginAppUITests.swift */; };
 		44369C8C20D095DA0067B247 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44369C8B20D095DA0067B247 /* GoogleService-Info.plist */; };
+		44F5D50A20D1DF7A005FE75C /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F5D50920D1DF7A005FE75C /* AlertController.swift */; };
 		5B6EFA184F98845317325831 /* Pods_LoginApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C58A9074515C31BCA6D9038 /* Pods_LoginApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		44369C7D20D08E2C0067B247 /* LoginAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAppUITests.swift; sourceTree = "<group>"; };
 		44369C7F20D08E2C0067B247 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44369C8B20D095DA0067B247 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		44F5D50920D1DF7A005FE75C /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		7C28A66195C5D92C26083F69 /* Pods-LoginApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoginApp/Pods-LoginApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 			children = (
 				44369C5D20D08E2B0067B247 /* AppDelegate.swift */,
 				44369C5F20D08E2B0067B247 /* ViewController.swift */,
+				44F5D50920D1DF7A005FE75C /* AlertController.swift */,
 				44369C8B20D095DA0067B247 /* GoogleService-Info.plist */,
 				44369C6120D08E2B0067B247 /* Main.storyboard */,
 				44369C6420D08E2C0067B247 /* Assets.xcassets */,
@@ -355,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44369C6020D08E2B0067B247 /* ViewController.swift in Sources */,
+				44F5D50A20D1DF7A005FE75C /* AlertController.swift in Sources */,
 				44369C5E20D08E2B0067B247 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,7 +537,10 @@
 				DEVELOPMENT_TEAM = FPCET9U9S6;
 				INFOPLIST_FILE = LoginApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Armit.LoginApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -550,7 +557,10 @@
 				DEVELOPMENT_TEAM = FPCET9U9S6;
 				INFOPLIST_FILE = LoginApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Armit.LoginApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -566,7 +576,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FPCET9U9S6;
 				INFOPLIST_FILE = LoginAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Armit.LoginAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -583,7 +597,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FPCET9U9S6;
 				INFOPLIST_FILE = LoginAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Armit.LoginAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -599,7 +617,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FPCET9U9S6;
 				INFOPLIST_FILE = LoginAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Armit.LoginAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -615,7 +637,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FPCET9U9S6;
 				INFOPLIST_FILE = LoginAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Armit.LoginAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
