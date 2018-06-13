@@ -9,21 +9,25 @@
 import UIKit
 import Google
 import GoogleSignIn
+import ObjectMapper
 
 class ViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
 
-    //label to display name of logged in user
+    //MARK: Outlets
     @IBOutlet weak var labelUserEmail: UILabel!
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var btnLogout: UIButton!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblEmail: UILabel!
     
+    //MARK: Instances
+    var actInd: UIActivityIndicatorView?
+    var activityView: UIView?
+    var blurView: UIView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //error object
-        var error : NSError?
         
         /*
         //setting the error
@@ -36,15 +40,47 @@ class ViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
         }*/
         
         self.btnLogin.backgroundColor = UIColor.red
+        self.btnLogin.layer.cornerRadius = 5
+        self.btnLogout.layer.cornerRadius = 5
         //adding the delegates
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
         
-        //getting the signin button and adding it to view
+        self.actInd = UIActivityIndicatorView()
+        self.activityView = UIView()
+        self.blurView = UIView()
         
     }
     
+    func activityIndicatorTrigger(start: Bool) {
+        if start {
+            
+            self.blurView?.backgroundColor = UIColor.black.withAlphaComponent(0.7)
+            self.blurView?.frame = self.view.frame
+            self.blurView?.center = self.view.center
+            
+            self.activityView?.backgroundColor = UIColor.black
+            self.activityView?.layer.cornerRadius = 10
+            self.activityView?.frame = CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0)
+            self.activityView?.center = self.view.center
+            
+            actInd!.hidesWhenStopped = true
+            actInd!.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+            self.view.addSubview(self.blurView!)
+            self.view.addSubview(self.activityView!)
+            self.view.addSubview(actInd!)
+            self.actInd?.center = self.view.center
+            actInd!.startAnimating()
+
+        } else {
+            self.actInd!.stopAnimating()
+            self.blurView?.removeFromSuperview()
+            self.activityView?.removeFromSuperview()
+        }
+    }
+    
     @IBAction func logIn(_ sender: Any) {
+        self.activityIndicatorTrigger(start: true)
         GIDSignIn.sharedInstance().signIn()
     }
     
@@ -59,6 +95,7 @@ class ViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
             if let profile = user.profile as GIDProfileData? {
                 self.lblName.text = profile.name
                 self.lblEmail.text = profile.email
+                self.activityIndicatorTrigger(start: false)
             }
         }
     }
